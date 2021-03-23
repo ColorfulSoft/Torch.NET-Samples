@@ -1029,7 +1029,7 @@ namespace Test
             Dictionary<int, float> res = new Dictionary<int, float>(5);
             for(int j = 0; j < 5; j++)
             {
-                   var maxi = 0;
+                var maxi = 0;
                 var maxv = 0f;
                 for(int i = 0; i < p.Length; i++)
                 {
@@ -1047,7 +1047,7 @@ namespace Test
         public static void Main(string[] args)
         {
             var m = models.squeezenet1_1(true);
-            var y = m.forward(load("1.jpg"));
+            var y = m.forward(load(args[0]));
             var pred = get_top5(y.squeeze(0).dotnet() as float[]);
             foreach(var p in pred)
             {
