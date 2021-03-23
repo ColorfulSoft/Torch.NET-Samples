@@ -1047,7 +1047,7 @@ namespace Test
         public static void Main(string[] args)
         {
             var m = models.squeezenet1_1(true);
-            var y = m.forward(load("C:\\1.jpg"));
+            var y = m.forward(load("1.jpg"));
             var pred = get_top5(y.squeeze(0).dotnet() as float[]);
             foreach(var p in pred)
             {
@@ -1056,5 +1056,7 @@ namespace Test
             Console.Write("Press any key to continue . . . ");
             Console.ReadKey(true);
         }
+
     }
+
 }
